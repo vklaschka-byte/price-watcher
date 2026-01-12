@@ -1,24 +1,22 @@
 from scraper import ziskej_cenu
-import time
 from datetime import datetime
 
-URL_PRODUKTU = "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
-CILOV_CENA = 55.0  
-def main():
-    print(f"--- SPUŠTĚN HLÍDAČ CEN ---")
-    print(f"Sleduji: {URL_PRODUKTU}")
-    print(f"Čas spuštění: {datetime.now().strftime('%H:%M:%S')}\n")
+URL_PRODUKTU = "https://www.knihydobrovsky.cz/kniha/muz-v-domacnosti-4-528805119"
+CILOV_CENA = 250.0 
 
+def main():
+    print(f"--- SPUŠTĚN HLÍDAČ CEN (Manga) ---")
+    print(f"Sleduji: {URL_PRODUKTU}")
+    
     aktualni_cena = ziskej_cenu(URL_PRODUKTU)
 
     if aktualni_cena is not None:
-        print(f"💰 Aktuální cena: {aktualni_cena}")
+        print(f"💰 Aktuální cena: {aktualni_cena} Kč")
         
         if aktualni_cena < CILOV_CENA:
-            print("✅ SUPER CENA! Měl bys nakoupit (nebo poslat e-mail).")
-            
+            print("✅ SUPER CENA! Kupuj to!")
         else:
-            print(f"❌ Cena je stále vysoká (Cíl je pod {CILOV_CENA}).")
+            print(f"❌ Cena je {aktualni_cena} Kč (Cíl je pod {CILOV_CENA} Kč).")
     else:
         print("Nepodařilo se zjistit cenu.")
 
