@@ -1,20 +1,21 @@
 # 📚 Hlídač cen knih (Price Watcher)
 
-Jednoduchý Python skript, který automaticky sleduje cenu vybrané knihy na e-shopu. Pokud cena klesne pod nastavenou hranici, program vás upozorní.
+Tento projekt automaticky sleduje cenu vybrané knihy na e-shopu **Knihy Dobrovský**, ukládá historii cen a umí vykreslit graf vývoje.
 
 ## 🚀 Funkce
-* ✅ Stahuje aktuální cenu z webu (Web Scraping).
-* ✅ Porovnává cenu s vaším limitem.
-* ✅ Čistá struktura kódu připravená pro rozšíření (např. o e-mailové notifikace).
+* **Web Scraping:** Stahuje aktuální cenu přímo ze stránky produktu.
+* **Automatizace:** Běží v nekonečné smyčce a kontroluje cenu každou minutu.
+* **Ukládání dat:** Historie cen se zapisuje do souboru `ceny.csv`.
+* **Vizualizace:** Skript `graf.py` vykreslí graf vývoje ceny (`vyvoj_ceny.png`).
 
-## 🛠 Použité technologie
-* **Python 3**
-* **BeautifulSoup4** (analýza HTML)
-* **Requests** (stahování stránek)
+## 🛠️ Použité technologie
+* Python 3
+* BeautifulSoup4 (analýza HTML)
+* Requests (stahování stránek)
+* Matplotlib (vykreslování grafů)
 
 ## ⚙️ Jak spustit
-1. Nainstalujte závislosti:
-   pip install -r requirements.txt
 
-2. Spusťte hlídače:
-   python src/main.py
+1. **Nainstalujte závislosti:**
+   ```bash
+   pip install -r requirements.txt
